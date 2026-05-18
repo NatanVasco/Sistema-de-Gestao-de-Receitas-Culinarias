@@ -1,0 +1,23 @@
+<div class="grid">
+
+  <div class="card" *ngFor="let recipe of recipes">
+
+    <h2>{{ recipe.nome }}</h2>
+
+    <p>{{ recipe.descricao }}</p>
+
+    <div class="actions">
+
+      <a [routerLink]="['/receitas', recipe.id]">
+        Ver Receita
+      </a>
+
+      <button (click)="delete(recipe.id)">
+        Excluir
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
