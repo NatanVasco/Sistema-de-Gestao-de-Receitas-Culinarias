@@ -22,7 +22,9 @@ export class RecipeService {
   salvar(recipe: Recipe): Observable<Recipe> {
     return this.http.post<Recipe>(this.api, recipe);
   }
-
+atualizar(id: number, recipe: Recipe): Observable<Recipe> {
+  return this.http.put<Recipe>(`${this.api}/${id}`, recipe);
+}
   excluir(id: number): Observable<void> {
     return this.http.delete<void>(`${this.api}/${id}`);
   }
